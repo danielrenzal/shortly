@@ -1,0 +1,585 @@
+$colors: (
+    primary1: hsl(180, 66%, 49%),
+    primary2: hsl(257, 27%, 26%), 
+    secondary: hsl(0, 87%, 67%),
+    neutral1: hsl(0, 0%, 92%),
+    neutral2: hsl(257, 7%, 63%),
+    neutral3: hsl(255, 11%, 22%),
+    neutral4: hsl(260, 8%, 14%),
+);
+
+@mixin getStartedBtn{
+    padding: .8em 2.5em;
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 700;
+    background-color: map-get($colors, primary1);
+    border: none;
+    border-radius: 80px;
+    cursor: pointer;
+    transition: background-color ease-in-out .15s;
+}
+
+$indentInline : 7vw;
+$btnHoverBgColor: hsl(180, 66%, 81%);
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    ul{
+        list-style: none;
+    }
+    a{
+        text-decoration: none;
+        color: map-get($colors, neutral2);
+    }
+}
+
+body{
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: map-get($colors, neutral2);
+}
+
+header{
+    display: flex;
+    align-items: start;
+    padding: 2.5em $indentInline 0em;
+    justify-content: space-between;
+    position: relative;
+    hr{
+        display: none;
+    }
+    nav{
+        display: none;
+        .nav-links, .account{
+            display: grid;
+            font-size: 1rem;
+            a:hover{
+                color: map-get($colors, neutral3);
+            }
+        }
+        .sign-up-btn{
+            @include getStartedBtn();
+            font-size: 1rem;
+             font-weight: 500;
+             letter-spacing: unset;
+             padding: .5em 1.5em;
+             &:hover{
+                 background-color: $btnHoverBgColor
+             }
+        }
+    }
+    .display-nav{
+        display: grid;
+        gap: 2em;
+        position: absolute;
+        background-color: map-get($colors, primary2);
+        text-align: center;
+        width: #{"calc(100% - "+$indentInline * 2+")"};
+        transform: translateY(15%);
+        padding: 2em 1.5em;
+        border-radius: 10px;
+        hr{
+            display: block;
+            background-color: map-get($colors, neutral1);
+            height: 1px;
+            border: none;
+        }
+        .nav-links, .account{
+            gap: 1.5em;
+            a{
+                color: white;
+            }
+            a:hover{
+                color: map-get($colors, primary1);
+            }
+        }
+    }
+}
+
+.menu-btn{
+    background-color: unset;
+    border: none;
+    display: grid;
+    gap: 6px;
+    span{
+        display: block;
+        height: 3px;
+        width: 25px;
+        background-color: map-get($colors, neutral2);
+    }
+}
+
+.hero{
+    overflow-x: hidden;
+    margin-top: 1.5em;
+    img{
+        width: #{"min(135vw, 40em)"};
+        margin: 0em auto 3em;
+        padding-left: 1.5em;
+        display: block;
+    }
+    .texts-container{
+        text-align: center;
+        padding-inline: $indentInline;
+        h1{
+            font-size: #{"min(11vw, 4em)"};
+            font-weight: 700;
+            color: map-get($colors, neutral3);
+            line-height: 120%;
+            margin-bottom: .3em;
+        }
+        p{
+            line-height: 160%;
+            margin-bottom: 1.7em;
+            font-size: 1.2rem;
+        }
+        button{
+            @include getStartedBtn();
+            &:hover{
+                background-color: $btnHoverBgColor
+            }
+        }
+    }
+    
+}
+
+form{
+    transform: translateY(50%);
+    display: grid;
+    padding: 1.2em;
+    margin: 0em $indentInline;
+    gap: 1.2em;
+    background-image: url(../images/bg-shorten-desktop.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: map-get($colors, primary2);
+    border-radius: 10px;
+    span{
+        position: relative;
+        .error-message{
+            display: none;
+            color: map-get($colors, secondary);
+            font-style: italic;
+            font-size: .8em;
+            position: absolute;
+    }
+    }
+    .url-input{
+        border: 3px solid white;
+        font-size: 1.125rem;
+        padding: .7em 1.2em;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    input::placeholder{
+        color: map-get($colors, neutral2);
+        
+    }
+    .shorten-btn{
+        @include getStartedBtn();
+        &:hover{
+            background-color: $btnHoverBgColor
+        }
+        padding: .7em 1.8em;
+        border-radius: 5px;
+        &:disabled, &[disabled]{
+            background-color: hsl(180, 42%, 72%);
+        }
+    }
+    .loading-animation{
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin: 0 auto;
+        border: 4px solid hsl(257, 100%, 96%);
+        border-top-color: map-get($colors, primary2);
+        border-radius: 50%;
+        animation: loadingAnimation 1s  infinite;
+    }
+    @keyframes loadingAnimation{
+        100%{
+            transform: rotate(360deg);
+        }
+    }
+}
+
+.empty-input-warning{
+    border: 3px solid map-get($colors, secondary) !important;
+    &::placeholder{
+        color: rgb(247, 168, 168);
+    }
+}
+
+.links-generated-container{
+    margin-bottom: 5em;
+    li{
+        display: grid;
+        gap: 1em;
+        background-color: white;
+        font-size: 1rem;
+        padding: 1em;
+        margin: 1.5em 0;
+        border-radius: 10px;
+        text-align: left;
+        *{
+            width: 100%;
+        }
+        .long-link{
+            color: map-get($colors, neutral3);
+        }
+        hr{
+            display: block;
+            background-color: map-get($colors, neutral1);
+            height: 1px;
+            border: none; 
+            width: #{"calc(100% + 2em)"};
+            transform: translateX(-1em);
+        }
+        .short-link{
+            color: map-get($colors, primary1);
+        }
+        button{
+            @include getStartedBtn();
+            padding: .5em 1.8em;
+            border-radius: 5px;
+            font-size: 1rem;
+            &:hover{
+                background-color: $btnHoverBgColor;
+            }
+        }
+        .remove-btn{
+            background-color: map-get($colors, secondary);
+            &:hover{
+                background-color: hsl(0, 100%, 90%);
+            }
+        }
+    }
+}
+
+.statistics{
+    background-color: map-get($colors, neutral1);
+    padding: 5em $indentInline 4em;
+    text-align: center;
+    h2{
+        color: map-get($colors, neutral3);
+        font-size: #{"min(8vw, 2rem)"};
+        font-weight: 700;
+        margin-bottom: .5em;
+    }
+    .track{
+        
+        line-height: 1.5;
+        max-width: 30em;
+        margin: 0 auto;
+    }
+}
+
+.features-section{
+    display: grid;
+    gap: 5em;
+    margin-top: 5em;
+    position: relative;
+    z-index: 1;
+    .blue-line{
+        display: block;
+        padding: 0;
+        height: 100%;
+        width: 8px;
+        background-color: map-get($colors, primary1);
+        position: absolute;
+        z-index: -1;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+    }
+    li{
+        background-color: white;
+        display: grid;
+        place-items: center;
+        padding: 0 1.5em 2em;
+        border-radius: 7px;
+        .icon-here{
+            background-repeat: no-repeat;
+            background-position: center;
+            background-color: map-get($colors, primary2);
+            height: 5em;
+            width: 5em;
+            border-radius: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    li:nth-child(1) .icon-here{
+        background-image: url(../images/icon-brand-recognition.svg);
+    }
+    li:nth-child(2) .icon-here{
+        background-image: url(../images/icon-detailed-records.svg);
+    }
+    li:nth-child(3) .icon-here{
+        background-image: url(../images/icon-fully-customizable.svg);
+    }
+    h3{
+        color: map-get($colors, neutral3);
+        font-size: 1.3rem;
+        transform: translateY(-50%);
+    }
+    p{
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+}
+
+.boost-links{
+    background-image: url(../images/bg-boost-desktop.svg);
+    background-color: map-get($colors, primary2);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: #{"max(2.5em, calc(8em - 15%))"} 1em;
+    display: grid;
+    gap: 1em;
+    justify-content: center;
+    place-items: center;
+    h2{
+        color: white;
+        font-size: #{"min(7.5vw, 2rem)"};
+    }
+    button{
+        @include getStartedBtn();
+        &:hover{
+            background-color: $btnHoverBgColor
+        }
+    }
+}
+footer{
+    background-color: map-get($colors, neutral4);
+}
+
+.footer-items-container{
+    padding: 3em 0em;
+    display: grid;
+    gap: 2.5em;
+    .web-logo{
+        display: block;
+        margin: 0 auto;
+    }
+    h4{
+        color: white;
+        margin-bottom: 1em;
+    }
+    nav{
+        .main-ul{
+            text-align: center;
+            display: grid;
+            gap: 2.5em;
+            justify-content: center;
+            li{
+                margin-bottom: .5em;
+            }
+        }
+    }
+    .socials{
+        display: grid;
+        grid-auto-flow: column;
+        gap: 1em;
+        place-content: center;
+        place-items: center;
+    }
+}
+
+@media (min-width:568px){
+    footer nav{
+        .main-ul{
+            grid-auto-flow: column;
+            text-align: left;
+            gap: 4em;
+        }
+    }
+}
+
+@media (min-width: 1024px){
+ @mixin maxWidth{
+    max-width: 125em;
+    margin-right: auto;
+    margin-left: auto;
+ }
+
+    $indentInline : 11vw;
+    header{
+        align-items: center;
+        justify-content: unset;
+        padding: 2.5em $indentInline 0em;
+        @include maxWidth();
+        img{
+            margin-right: 2.5em;
+        }
+        nav{
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            .nav-links, .account{
+                align-items: center;
+                grid-auto-flow: column;
+                gap: 2em;
+            }
+        }
+        .menu-btn{
+            display: none;
+        }
+    }
+    
+    .hero{
+        @include maxWidth();
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-areas: 'text image';
+        margin-top: 5em;
+        grid-template-columns: 1.8fr 1fr;
+        .texts-container{
+            padding-inline: $indentInline 0em;
+            text-align: left;
+            grid-area: text;
+            align-self: center;
+            p{
+                max-width: 25em;
+            }
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn{
+            0%{
+                opacity: 0;
+                transform: translateY(3em);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0em);
+            }
+        }
+
+        .img-container-hero{
+            opacity: 0;
+            grid-area: image;
+            position: relative;
+            width: 30vw;
+            height: 26em;
+            img{
+                position: absolute;
+                left: -90px;
+            }
+            animation: fadeInImg 1s forwards;
+            animation-delay: .5s;
+        }
+
+        @keyframes fadeInImg{
+            0%{
+                opacity: 0;
+                transform: translateX(3em);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0em);
+            }
+        }
+        
+    }
+    .form-container, .features-section-container, .responsive-footer-container{
+        @include maxWidth();
+    }
+
+    form{
+        margin: 0 $indentInline;
+        grid-auto-flow: column;
+        padding: 2.5em 3.5em;
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+        gap: 1.5em;
+        input{
+            padding: 1em 2em;
+        }
+        .shorten-btn{
+            width: fit-content;
+        }
+    }
+    .statistics{
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .links-generated-container{
+        margin-left: $indentInline;
+        margin-right: $indentInline;
+        li{
+            display: grid;
+            grid-auto-flow: column;
+            align-items: center;
+            grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+            .long-link{
+                grid: 1fr;
+            }
+            hr{
+                display: none
+            }
+        }
+    }
+
+    .features-section{
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2vw;
+        height: #{"max(396px, calc(34em - 15vw))"};
+        margin-top: 7em;
+        margin-bottom: 3em;
+        margin-left: $indentInline;
+        margin-right: $indentInline;
+        .blue-line{
+            width: 100%;
+            height: 10px;
+            margin: auto 0;
+            top: 0;
+            bottom: 0;
+        }
+        li{
+            height: #{"calc(23em - 7vw)"};
+            justify-items: start;
+            text-align: left;
+            h3{
+                font-size: 1.5rem;
+            }
+            &:nth-child(1){
+                align-self: start;
+            }
+            &:nth-child(2){
+                align-self: center;
+            }
+            &:nth-child(3){
+                align-self: end;
+            }
+        }
+    }
+
+    .footer-items-container{
+        grid-auto-flow: column;
+        padding-left: $indentInline;
+        padding-right: $indentInline;
+        grid-template-columns: 1.5fr 1fr 1fr;
+        padding-bottom: 1.5em;
+        gap: 6vw;
+        .web-logo{
+            margin: 0;
+        }
+        nav .main-ul{
+            gap: 4vw;
+        }
+        .socials{
+            justify-content: end;
+            align-content: start;
+            a svg:hover{
+                fill: map-get($colors, primary1);
+            }
+        }
+    }
+}
