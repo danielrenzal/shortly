@@ -226,11 +226,19 @@ form{
         margin: 1.5em 0;
         border-radius: 10px;
         text-align: left;
-        *{
-            width: 100%;
+
+        .btn-links-container{
+            display: grid;
+            gap: 1em;
+            button{
+                width: 100%;
+            }
         }
+
+
         .long-link{
             color: map-get($colors, neutral3);
+            overflow-x: auto;
         }
         hr{
             display: block;
@@ -242,6 +250,8 @@ form{
         }
         .short-link{
             color: map-get($colors, primary1);
+            overflow-x: auto;
+
         }
         button{
             @include getStartedBtn();
@@ -515,10 +525,16 @@ footer{
             display: grid;
             grid-auto-flow: column;
             align-items: center;
-            grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-            .long-link{
-                grid: 1fr;
+            grid-template-columns: 3fr 1.5fr 1fr;
+            // .long-link{
+            //     grid: 2fr;
+            // }
+            .short-link{
+                justify-self: end; 
             }
+            // .btn-links-container{
+            //     grid: 1fr;
+            // }
             hr{
                 display: none
             }

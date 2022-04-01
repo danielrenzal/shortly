@@ -86,8 +86,10 @@ function displayData(){
                             <p class="long-link">${linksArray[i].long}</p>
                             <hr>
                             <p class="short-link">${linksArray[i].short}</p>
+                            <div class="btn-links-container">
                             <button type="button" onClick="copyToClipboard(this)" class="copy-btn">Copy</button>
                             <button type="button" onClick="removeElement(this)" class="remove-btn">Remove</button>
+                            </div>
                         </li>`
     }
     linksContainer.innerHTML = displayItems;
@@ -110,8 +112,8 @@ function saveToLocalStorage(shortUrl, longUrl){
 
 
 function copyToClipboard(button){
-    const copyShortLink = button.parentElement.querySelector(".short-link");
-    const otherBtns = button.parentElement.parentElement.querySelectorAll(".copy-btn");
+    const copyShortLink = button.parentElement.parentElement.querySelector(".short-link");
+    const otherBtns = button.parentElement.parentElement.parentElement.querySelectorAll(".copy-btn");
 
     otherBtns.forEach(btns=>{
         btns.style.backgroundColor = "hsl(180, 66%, 49%)";
@@ -126,11 +128,9 @@ function copyToClipboard(button){
 }
 
 function removeElement(button){
-    const copyShortLink = button.parentElement.querySelector(".short-link").textContent;
+    const copyShortLink = button.parentElement.parentElement.querySelector(".short-link").textContent;
     
-    console.log(linksArray.length)
     linksArray = linksArray.filter(linkItem=>linkItem.short != copyShortLink);
-    console.log(linksArray.length)
     localStorage.setItem("links", JSON.stringify(linksArray));
     displayData();
 }
