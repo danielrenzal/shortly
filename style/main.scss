@@ -158,7 +158,7 @@ form{
     background-repeat: no-repeat;
     background-color: map-get($colors, primary2);
     border-radius: 10px;
-    span{
+    div{
         position: relative;
         .error-message{
             display: none;
@@ -376,7 +376,7 @@ footer{
         display: block;
         margin: 0 auto;
     }
-    h4{
+    h3{
         color: white;
         margin-bottom: 1em;
     }

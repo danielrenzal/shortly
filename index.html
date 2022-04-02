@@ -23,7 +23,7 @@
       <span></span>
       <span></span>
     </button>
-    <nav>
+    <nav aria-label="primary navigation">
         <ul class="nav-links">
           <li><a href="#">Features</a></li>
           <li><a href="#">Pricing</a></li>
@@ -53,10 +53,10 @@
 
     <div class="form-container"> <!-- for responsive resizing purposes -->
       <form>
-        <span> <!--to display an error msg-->
-          <input type="text" name="url-input" class="url-input" id="" placeholder="Shorten a link here...">
+        <div> <!--to display an error msg-->
+          <input type="text" name="url-input" class="url-input" id="url-input" placeholder="Shorten a link here...">
           <p class="error-message"></p>
-        </span>
+        </div>
         <button type="button" class="shorten-btn">Shorten it!</button>
       </form>
     </div>
@@ -106,10 +106,10 @@
           <img src="images/logo-white.svg" alt="Website logo" class="web-logo">
         </div>
         
-        <nav>
+        <nav aria-label="secondary navigation">
           <ul class="main-ul">
             <li>
-              <h4>Features</h4>
+              <h3>Features</h3>
               <ul>
                 <li><a href="#">Link shortening</a></li>
                 <li><a href="#">Branded Links</a></li>
@@ -118,7 +118,7 @@
             </li>
     
             <li>
-              <h4>Resources</h4>
+              <h3>Resources</h3>
               <ul>
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">Developers</a></li>
@@ -126,7 +126,7 @@
               </ul>
             </li>
             <li>
-              <h4>Company</h4>
+              <h3>Company</h3>
               <ul>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Our Teams</a></li>

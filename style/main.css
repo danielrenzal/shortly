@@ -185,11 +185,11 @@ form {
   border-radius: 10px;
 }
 
-form span {
+form div {
   position: relative;
 }
 
-form span .error-message {
+form div .error-message {
   display: none;
   color: #f46262;
   font-style: italic;
@@ -502,7 +502,7 @@ footer {
   margin: 0 auto;
 }
 
-.footer-items-container h4 {
+.footer-items-container h3 {
   color: white;
   margin-bottom: 1em;
 }
