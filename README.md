@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: https://www.frontendmentor.io/solutions/url-shortening-api-landing-page-using-html-css-and-javascript-SkQetk8X5
+- Live Site URL: https://danielrenzal.github.io/shortly/
 
 ## My process
 
@@ -56,7 +56,5 @@ google.com
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Website - https://danielrenzal.github.io/
+- Frontend Mentor - https://www.frontendmentor.io/profile/danielrenzal
