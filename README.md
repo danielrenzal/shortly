@@ -10,8 +10,6 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
@@ -45,14 +43,6 @@ Users should be able to:
 ### What I learned
 
 This project improved my ablity to transfer a design mockup into a code, in making responsive layouts, and working with JavaScript and SASS in general. I have also familiarized myself more in working with APIs and LocalStorage.
-
-### Continued development
-
-In the future I would like to learn more about frameworks and libraries...
-
-### Useful resources
-
-google.com
 
 ## Author
 
