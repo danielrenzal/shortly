@@ -16,7 +16,7 @@ This is a solution to the [Shortly URL shortening API Challenge challenge on Fro
 
 ### The challenge
 
-Users should be able to:
+#### Users should be able to
 
 - View the optimal layout for the site depending on their device's screen size
 - Shorten any valid URL
@@ -25,7 +25,10 @@ Users should be able to:
 - Receive an error message when the `form` is submitted if:
   - The `input` field is empty
 
-(I also added some additional features such as remove button, loading animation and a more complete error handling)
+#### What I added as an additional feature
+- Remove button
+- Loading animation
+- A more complete error handling
 
 ### Links
 
