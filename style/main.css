@@ -77,7 +77,6 @@ header nav .sign-up-btn:hover {
 header .display-nav {
   display: -ms-grid;
   display: grid;
-  gap: 2em;
   position: absolute;
   background-color: #3b3054;
   text-align: center;
@@ -93,18 +92,25 @@ header .display-nav hr {
   background-color: #ebebeb;
   height: 1px;
   border: none;
-}
-
-header .display-nav .nav-links, header .display-nav .account {
-  gap: 1.5em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 header .display-nav .nav-links a, header .display-nav .account a {
   color: white;
+  margin-bottom: 1.5em;
 }
 
 header .display-nav .nav-links a:hover, header .display-nav .account a:hover {
   color: #2acfcf;
+}
+
+header .display-nav .nav-links li {
+  margin-bottom: 1.5em;
+}
+
+header .display-nav .nav-links li:last-child {
+  margin-bottom: 0;
 }
 
 .menu-btn {
@@ -112,7 +118,6 @@ header .display-nav .nav-links a:hover, header .display-nav .account a:hover {
   border: none;
   display: -ms-grid;
   display: grid;
-  gap: 6px;
 }
 
 .menu-btn span {
@@ -120,6 +125,11 @@ header .display-nav .nav-links a:hover, header .display-nav .account a:hover {
   height: 3px;
   width: 25px;
   background-color: #9e9aa7;
+  margin-bottom: 6px;
+}
+
+.menu-btn span:last-child {
+  margin-bottom: 0;
 }
 
 .hero {
@@ -136,7 +146,8 @@ header .display-nav .nav-links a:hover, header .display-nav .account a:hover {
 
 .hero .texts-container {
   text-align: center;
-  padding-inline: 7vw;
+  padding-left: 7vw;
+  padding-right: 7vw;
 }
 
 .hero .texts-container h1 {
@@ -177,7 +188,6 @@ form {
   display: grid;
   padding: 1.2em;
   margin: 0em 7vw;
-  gap: 1.2em;
   background-image: url(../images/bg-shorten-desktop.svg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -186,6 +196,7 @@ form {
 }
 
 form div {
+  width: 100%;
   position: relative;
 }
 
@@ -203,6 +214,7 @@ form .url-input {
   padding: .7em 1.2em;
   border-radius: 5px;
   width: 100%;
+  margin-bottom: 1.2em;
 }
 
 form input::-webkit-input-placeholder {
@@ -297,7 +309,6 @@ form .loading-animation {
 .links-generated-container li {
   display: -ms-grid;
   display: grid;
-  gap: 1em;
   background-color: white;
   font-size: 1rem;
   padding: 1em;
@@ -309,16 +320,21 @@ form .loading-animation {
 .links-generated-container li .btn-links-container {
   display: -ms-grid;
   display: grid;
-  gap: 1em;
 }
 
 .links-generated-container li .btn-links-container button {
   width: 100%;
+  margin-bottom: 1em;
+}
+
+.links-generated-container li .btn-links-container button:last-child {
+  margin-bottom: 0;
 }
 
 .links-generated-container li .long-link {
   color: #35323e;
   overflow-x: auto;
+  margin-bottom: 1em;
 }
 
 .links-generated-container li hr {
@@ -334,6 +350,8 @@ form .loading-animation {
 .links-generated-container li .short-link {
   color: #2acfcf;
   overflow-x: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 .links-generated-container li button {
@@ -386,7 +404,6 @@ form .loading-animation {
 .features-section {
   display: -ms-grid;
   display: grid;
-  gap: 5em;
   margin-top: 5em;
   position: relative;
   z-index: 1;
@@ -412,6 +429,11 @@ form .loading-animation {
   place-items: center;
   padding: 0 1.5em 2em;
   border-radius: 7px;
+  margin-bottom: 5em;
+}
+
+.features-section li:nth-child(3) {
+  margin-bottom: 0;
 }
 
 .features-section li .icon-here {
@@ -457,7 +479,6 @@ form .loading-animation {
   padding: max(2.5em, calc(8em - 15%)) 1em;
   display: -ms-grid;
   display: grid;
-  gap: 1em;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -467,6 +488,7 @@ form .loading-animation {
 .boost-links h2 {
   color: white;
   font-size: min(7.5vw, 2rem);
+  margin-bottom: 1em;
 }
 
 .boost-links button {
@@ -494,12 +516,11 @@ footer {
   padding: 3em 0em;
   display: -ms-grid;
   display: grid;
-  gap: 2.5em;
 }
 
 .footer-items-container .web-logo {
   display: block;
-  margin: 0 auto;
+  margin: 0 auto 2.5em;
 }
 
 .footer-items-container h3 {
@@ -511,7 +532,6 @@ footer {
   text-align: center;
   display: -ms-grid;
   display: grid;
-  gap: 2.5em;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -521,20 +541,31 @@ footer {
   margin-bottom: .5em;
 }
 
+.footer-items-container nav .main-ul > li {
+  margin-bottom: 2.5em;
+}
+
 .footer-items-container .socials {
   display: -ms-grid;
   display: grid;
   grid-auto-flow: column;
-  gap: 1em;
   place-content: center;
   place-items: center;
+}
+
+.footer-items-container .socials li {
+  margin-left: .5em;
+  margin-right: .5em;
 }
 
 @media (min-width: 568px) {
   footer nav .main-ul {
     grid-auto-flow: column;
     text-align: left;
-    gap: 4em;
+  }
+  footer nav .main-ul > li {
+    margin-left: 2em;
+    margin-right: 2em;
   }
 }
 
@@ -570,7 +601,13 @@ footer {
         -ms-flex-align: center;
             align-items: center;
     grid-auto-flow: column;
-    gap: 2em;
+  }
+  header nav .nav-links > li {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  header nav .account a {
+    margin-right: 2em;
   }
   header .menu-btn {
     display: none;
@@ -588,7 +625,8 @@ footer {
         grid-template-columns: 1.8fr 1fr;
   }
   .hero .texts-container {
-    padding-inline: 11vw 0em;
+    padding-left: 11vw;
+    padding-right: 0em;
     text-align: left;
     -ms-grid-row: 1;
     -ms-grid-column: 1;
@@ -673,20 +711,19 @@ footer {
     margin-left: auto;
   }
   form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     margin: 0 11vw;
-    grid-auto-flow: column;
     padding: 2.5em 3.5em;
-    -ms-grid-columns: (minmax(50%, 1fr))[auto-fill];
-        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-    gap: 1.5em;
   }
-  form input {
+  form .url-input {
     padding: 1em 2em;
+    margin-bottom: 0;
   }
   form .shorten-btn {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
+    margin-left: 1.5em;
+    min-width: 9em;
   }
   .statistics {
     padding-left: 0;
@@ -703,12 +740,17 @@ footer {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -ms-grid-columns: 3fr 1.5fr 1fr;
-        grid-template-columns: 3fr 1.5fr 1fr;
+    -ms-grid-columns: 2fr 1.5fr 1fr;
+        grid-template-columns: 2fr 1.5fr 1fr;
+  }
+  .links-generated-container li .long-link, .links-generated-container li .short-link {
+    margin-bottom: 0;
   }
   .links-generated-container li .short-link {
     -ms-grid-column-align: end;
         justify-self: end;
+    margin-top: 0;
+    margin-right: 1em;
   }
   .links-generated-container li hr {
     display: none;
@@ -719,7 +761,6 @@ footer {
     grid-auto-flow: column;
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
-    gap: 2vw;
     height: max(396px, calc(34em - 15vw));
     margin-top: 7em;
     margin-bottom: 3em;
@@ -737,6 +778,9 @@ footer {
     height: calc(23em - 7vw);
     justify-items: start;
     text-align: left;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-bottom: 0;
   }
   .features-section li h3 {
     font-size: 1.5rem;
@@ -745,6 +789,7 @@ footer {
     -ms-flex-item-align: start;
         -ms-grid-row-align: start;
         align-self: start;
+    margin-left: 0;
   }
   .features-section li:nth-child(2) {
     -ms-flex-item-align: center;
@@ -755,6 +800,7 @@ footer {
     -ms-flex-item-align: end;
         -ms-grid-row-align: end;
         align-self: end;
+    margin-right: 0;
   }
   .footer-items-container {
     grid-auto-flow: column;
@@ -763,13 +809,19 @@ footer {
     -ms-grid-columns: 1.5fr 1fr 1fr;
         grid-template-columns: 1.5fr 1fr 1fr;
     padding-bottom: 1.5em;
-    gap: 6vw;
   }
   .footer-items-container .web-logo {
     margin: 0;
   }
   .footer-items-container nav .main-ul {
     gap: 4vw;
+    margin-left: 6vw;
+    margin-right: 6vw;
+  }
+  .footer-items-container nav .main-ul > li {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: .5em;
   }
   .footer-items-container .socials {
     -webkit-box-pack: end;
